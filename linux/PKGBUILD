@@ -22,6 +22,7 @@ source=(
   0002-ACPICA-Allow-address_space_handler-Install-and-_REG-.patch
   0003-ACPI-EC-Fix-EC-address-space-handler-unregistration.patch
   0004-ACPI-EC-fix-ECDT-probe-ordering-issues.patch
+  0005-Add-IdeaPad-WMI-Fn-Keys-driver.patch
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -34,7 +35,8 @@ sha256sums=('SKIP'
             '2d3d2630f70455665508f1fafe9ed4a320b7e35f6c33843934f5823d175d89f7'
             '0db4eca1b2c5e75de40de2f58aefe337d236b7bb450c111ee4ca7fa460c7ee73'
             'a7a7aa38aa21d4749994c0d12823638bf83070bcdd11fb470ecd5904c5c183bf'
-            '244678444eb5a297badcfedaac324d1186a8973aea0e8a98128b65eb9ecd644b')
+            '244678444eb5a297badcfedaac324d1186a8973aea0e8a98128b65eb9ecd644b'
+            'f28a48ec39fee2afb66a9fa79d8dbefaa8ec1e25293ce1a90b5db70591ab5fff')
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase

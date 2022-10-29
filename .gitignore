@@ -1,0 +1,5 @@
+*.pkg.tar.zst
+keys
+pkg
+src
+archlinux-linux
