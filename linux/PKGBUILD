@@ -1,8 +1,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-lenovo-slim-7
-pkgver=6.0.5.arch1
-pkgrel=1
+pkgver=6.0.6.arch1
+pkgrel=2
 pkgdesc='Linux'
 _srctag=v${pkgver%.*}-${pkgver##*.}
 url="https://github.com/archlinux/linux/commits/$_srctag"
@@ -22,7 +22,7 @@ source=(
   0002-ACPICA-Allow-address_space_handler-Install-and-_REG-.patch
   0003-ACPI-EC-Fix-EC-address-space-handler-unregistration.patch
   0004-ACPI-EC-fix-ECDT-probe-ordering-issues.patch
-  0005-Add-IdeaPad-WMI-Fn-Keys-driver.patch
+  0005-Add-IdeaPad-WMI-Fn-Keys-driver.patch  
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -70,7 +70,7 @@ prepare() {
 
 build() {
   cd $_srcname
-  make all
+  make htmldocs all
 }
 
 _package() {
@@ -202,7 +202,7 @@ _package-docs() {
   ln -sr "$builddir/Documentation" "$pkgdir/usr/share/doc/$pkgbase"
 }
 
-pkgname=("$pkgbase" "$pkgbase-headers")
+pkgname=("$pkgbase" "$pkgbase-headers" "$pkgbase-docs")
 for _p in "${pkgname[@]}"; do
   eval "package_$_p() {
     $(declare -f "_package${_p#$pkgbase}")
